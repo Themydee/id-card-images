@@ -2,19 +2,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
 }
 
+
 .image {
-  margin: 10px;
+  margin: 50px;
   position: relative;
   display: inline-block;
 }
 
 .image img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+  transform: scale(1);
+  vertical-align: middle;
+  transition: .4s;
   object-fit: cover;
   border-radius: 5px;
+}
+
+.image img:hover{
+  transform: scale(1.1);
 }
 
 .image span {
@@ -29,6 +39,18 @@
   padding: 5px 10px;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+.container{
+  padding: 25px 10%;
+  text-align: center;
+}
+
+.container #seach-input{
+  width: 600px;
+  border: 3px solid #000;
+  padding: 12px 15px;
+  font-size: 20px;
 }
 
 /* Animation */
@@ -72,4 +94,21 @@ h1 {
     flex-direction: column;
     align-items: center;
   }
+
+  .container #search-input{
+    width: 100%;
+  }
 }
+
+
+@media screen and (max-width: 450px) {
+  .image-container image{
+    width: 100%;
+  }
+
+  .container #search-input{
+    width: 100%;
+  }
+}
+
+
